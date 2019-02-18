@@ -2,6 +2,7 @@ package com.e9ab98e991ab.libcommon.base;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 import com.apkfuns.logutils.LogLevel;
 import com.apkfuns.logutils.LogUtils;
@@ -9,6 +10,11 @@ import com.e9ab98e991ab.libcommon.utils.toast.ToastyUtils;
 
 import java.util.Locale;
 
+import javax.inject.Inject;
+
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.onAdaptListener;
@@ -19,12 +25,18 @@ import me.jessyan.autosize.onAdaptListener;
  * @version V1.0.0
  * @name BaseApplication
  */
-public class BaseApplication extends Application {
+public class BaseApplication extends Application implements HasActivityInjector {
+    @Inject
+    DispatchingAndroidInjector<Activity> dispatchingAndroidInjector;
 
     private static BaseApplication sInstance;
 
     public static BaseApplication getIns() {
         return sInstance;
+    }
+
+    public static Context getContext() {
+        return getContext();
     }
 
     @Override
@@ -84,6 +96,9 @@ public class BaseApplication extends Application {
                 //.configMethodOffset(1)
                 //.addParserClass(OkHttpResponseParse.class)
                 .configLevel(LogLevel.TYPE_VERBOSE);
+
+
+
     }
 
     @Override
@@ -100,5 +115,10 @@ public class BaseApplication extends Application {
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
+    }
+
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return dispatchingAndroidInjector;
     }
 }

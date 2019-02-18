@@ -39,7 +39,7 @@ import androidx.appcompat.widget.AppCompatButton;
  * 如：
  * ((BamButton)btn_bam).closeSuperb();
  *
- * @author Bamboy
+ * @author
  *
  */
 public class BamButton extends AppCompatButton {

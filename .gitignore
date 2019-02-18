@@ -1,4 +1,4 @@
-/build
+/libcommon/build
 ### Android template
 # Built application files
 *.apk
@@ -13,7 +13,7 @@
 # Generated files
 bin/
 gen/
-out/
+build/generated/renderscript_source_output_dir/debug/compileDebugRenderscript/out/
 
 # Gradle files
 .gradle/

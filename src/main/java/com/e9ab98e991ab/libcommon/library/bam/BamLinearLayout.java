@@ -37,7 +37,7 @@ import android.widget.LinearLayout;
  * 如：
  * ((BamLinearLayout)ll_bam).closeSuperb();
  * 
- * @author Bamboy
+ * @author
  * 
  */
 public class BamLinearLayout extends LinearLayout {

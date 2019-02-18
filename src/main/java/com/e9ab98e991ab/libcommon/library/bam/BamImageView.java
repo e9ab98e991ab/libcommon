@@ -39,7 +39,7 @@ import androidx.appcompat.widget.AppCompatImageView;
  * 如：
  * ((BamImageView)iv_bam).closeSuperb();
  * 
- * @author Bamboy
+ * @author
  * 
  */
 public class BamImageView extends AppCompatImageView {

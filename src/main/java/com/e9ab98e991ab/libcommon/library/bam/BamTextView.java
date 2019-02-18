@@ -39,7 +39,7 @@ import androidx.appcompat.widget.AppCompatTextView;
  * 如：
  * ((BamTextView)tv_bam).closeSuperb();
  *
- * @author Bamboy
+ * @author
  * 
  */
 public class BamTextView extends AppCompatTextView {

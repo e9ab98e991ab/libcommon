@@ -37,7 +37,7 @@ import android.widget.RelativeLayout;
  * 如：
  * ((BamRelativeLayout)rl_bam).closeSuperb();
  * 
- * @author Bamboy
+ * @author
  * 
  */
 public class BamRelativeLayout extends RelativeLayout {

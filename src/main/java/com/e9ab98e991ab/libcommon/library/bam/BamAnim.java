@@ -40,7 +40,7 @@ import com.e9ab98e991ab.libcommon.R;
  * 如：
  * ((BamImageView)iv_bam).closeSuperb();
  *
- * @author Bamboy
+ * @author
  */
 public class BamAnim {
 

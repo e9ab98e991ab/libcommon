@@ -39,7 +39,7 @@ import androidx.appcompat.widget.AppCompatRadioButton;
  * 如：
  * ((BamRadioButton)rb_bam).closeSuperb();
  * 
- * @author Bamboy
+ * @author
  * 
  */
 public class BamRadioButton extends AppCompatRadioButton {
