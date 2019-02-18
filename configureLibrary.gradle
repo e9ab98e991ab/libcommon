@@ -1,0 +1,82 @@
+/**
+ * 工程类库共用相关配置
+ * 配置类库公用的配置
+ */
+
+subprojects {
+
+    if (it.name.startsWith('lib')) {
+        if (isPlugin.toBoolean()) {
+            apply plugin: 'com.android.application'
+        } else {
+            apply plugin: 'com.android.library'
+            apply plugin: 'kotlin-android'
+            apply plugin: 'kotlin-android-extensions'
+            apply plugin: 'kotlin-kapt'
+            kapt {
+                arguments {
+                    arg("moduleName", project.getName())
+                }
+            }
+        }
+        android {
+            compileSdkVersion build_versions.target_sdk
+            buildToolsVersion build_versions.build_tools
+
+            defaultConfig {
+                minSdkVersion build_versions.min_sdk
+                targetSdkVersion build_versions.target_sdk
+                versionCode 1
+                versionName "1.0"
+
+
+                //ARouter
+//                javaCompileOptions {
+//                    annotationProcessorOptions {
+//                        arguments = [moduleName: project.getName()]
+//                    }
+//                }
+//                renderscriptTargetApi 25
+//                renderscriptSupportModeEnabled true
+//                vectorDrawables.useSupportLibrary = true
+
+                //开启渲染
+ //               renderscriptSupportModeEnabled true
+
+//                packagingOptions {
+//                    exclude 'lib/x86/librsjni.so'
+//                    exclude 'lib/x86_64/librsjni.so'
+//                    exclude 'lib/arm64-v8a/librsjni.so'
+//                    exclude 'lib/armeabi-v7a/librsjni.so'
+//                    exclude 'lib/x86/libRSSupport.so'
+//                    exclude 'lib/x86_64/libRSSupport.so'
+//                    exclude 'lib/armeabi-v7a/libRSSupport.so'
+//                    exclude 'lib/arm64-v8a/libRSSupport.so'
+//                    exclude 'lib/x86_64/librsjni_androidx.so'
+//                    exclude 'lib/armeabi-v7a/librsjni_androidx.so'
+//                }
+            }
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+
+
+            sourceSets {
+                main {
+                    if (isPlugin.toBoolean()) {
+                        manifest.srcFile 'src/main/module/AndroidManifest.xml'
+                    } else {
+                        manifest.srcFile 'src/main/AndroidManifest.xml'
+                        //集成开发模式下排除debug文件夹中的所有Java文件
+                        java {
+                            exclude 'debug/**'
+                        }
+                    }
+                    jniLibs.srcDirs = ['libs']
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,315 @@
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+ext.deps = [:]
+def versions = [:]
+versions.arch_core = "1.1.1"
+versions.room = "1.1.0"
+versions.lifecycle = "1.1.1"
+versions.support = "27.1.1"
+versions.multidex = "1.0.3"
+versions.dagger = "2.21"
+versions.junit = "4.12"
+versions.espresso = "3.0.1"
+versions.retrofit = "2.3.0"
+versions.okhttp_logging_interceptor = "3.9.0"
+versions.mockwebserver = "3.8.1"
+versions.apache_commons = "2.5"
+versions.mockito = "2.7.19"
+versions.mockito_all = "1.10.19"
+versions.dexmaker = "2.2.0"
+versions.constraint_layout = "1.0.2"
+versions.glide = "4.7.1"
+versions.glide_transformations = "3.0.1"
+versions.timber = "4.5.1"
+versions.android_gradle_plugin = '3.3.1'
+versions.rxjava2 = "2.2.0"
+versions.rxpermissions = "0.9.5"
+versions.rx_android = "2.0.1"
+versions.atsl_runner = "1.0.1"
+versions.atsl_rules = "1.0.1"
+versions.hamcrest = "1.3"
+versions.kotlin = "1.3.11"
+versions.paging = "1.0.0"
+versions.work = "1.0.0-alpha01"
+versions.navigation = "1.0.0-alpha04"
+versions.autolayout = "1.4.5"
+versions.logs = "1.15"
+versions.circular_animcom = "0.3.4"
+versions.xfrag = "1.0.1"
+versions.butterknife = "8.8.1"
+versions.base_recyc = "2.9.30"
+versions.tangram = "2.0.5"
+versions.v_layout = "1.2.8"
+versions.logutils = "1.6.0"
+versions.log2file = "1.1.0"
+versions.easypermissions = "0.2.1"
+versions.circularprogressbar = "1.1.1"
+versions.photo_view = "1.3.0"
+versions.multi_Image_Selector = "1.2"
+versions.rwidget_helper = "1.0.2"
+versions.findbugs = "3.0.1"
+versions.disklrucache = "2.0.2"
+versions.up = "3.5.2"
+versions.okgo = "3.0.4"
+versions.ok_utils = "3.8.0"
+versions.aspectjrt = "1.8.13"
+versions.aspectjx_plugin = "1.8.13"
+versions.magic_plugin = "1.0.0"
+versions.bugly = "2.6.6.1"
+versions.wechat_sdk = "5.1.4"
+versions.ali_sdk = "0.0.0"
+versions.smartRefreshLayout = "1.1.0-alpha-14"
+versions.realtimeblurview = "1.1.2"
+versions.richtext = "3.0.7"
+versions.kotlin_plugin = "1.3.0"
+versions.autosize = "1.0.6"
+versions.androidx = "1.0.0"
+versions.androidx_lifecycle = "2.0.0"
+versions.androidx_room = "2.0.0"
+versions.multidex = "2.0.0"
+versions.constraintlayout = "1.1.2"
+versions.lottie_version = "2.8.0"
+versions.zxing = "3.3.3"
+versions.permissionsdispatcher = "3.1.0"
+def deps = [:]
+
+
+deps.zxing = "com.google.zxing:core:$versions.zxing"
+
+
+def layouts = [:]
+layouts.autolayout = "com.zhy:autolayout:$versions.autolayout"
+deps.base_recyc = "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions.base_recyc"
+layouts.tangram = "com.alibaba.android:tangram:$versions.tangram"
+layouts.v_layout = "com.alibaba.android:vlayout:$versions.v_layout"
+deps.layouts = layouts
+
+def androidx = [:]
+androidx.appcompat = "androidx.appcompat:appcompat:$versions.androidx"
+androidx.core = "androidx.core:core:$versions.androidx"
+androidx.percentlayout = "androidx.percentlayout:percentlayout:$versions.androidx"
+androidx.legacy_support_v4 = "androidx.legacy:legacy-support-v4:$versions.androidx"
+androidx.recyclerview = "androidx.recyclerview:recyclerview:$versions.androidx"
+androidx.gridlayout = "androidx.gridlayout:gridlayout:$versions.androidx"
+androidx.multidex = "androidx.multidex:multidex:$versions.multidex"
+androidx.cardview = "androidx.cardview:cardview:$versions.androidx"
+androidx.annotation = "androidx.annotation:annotation:$versions.androidx"
+androidx.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+androidx.lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime:$versions.androidx_lifecycle"
+androidx.lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:$versions.androidx_lifecycle"
+androidx.lifecycle_common_java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.androidx_lifecycle"
+androidx.room_runtime = "androidx.room:room-runtime:$versions.androidx_room"
+deps.androidx = androidx
+
+
+def support = [:]
+support.annotations = "com.android.support:support-annotations:$versions.support"
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
+support.cardview = "com.android.support:cardview-v7:$versions.support"
+support.design = "com.android.support:design:$versions.support"
+support.v4 = "com.android.support:support-v4:$versions.support{ force = true;}"
+support.core_utils = "com.android.support:support-core-utils:$versions.support"
+support.percent = "com.android.support:percent:$versions.support"
+support.grid_layout = "com.android.support:gridlayout-v7:$versions.support"
+support.multidex = "com.android.support:multidex:$versions.multidex"
+deps.butterknife = "com.jakewharton:butterknife:$versions.butterknife"
+deps.butterknife_compiler = "com.jakewharton:butterknife-compiler:$versions.butterknife"
+deps.smartRefreshLayout = "com.scwang.smartrefresh:SmartRefreshLayout:$versions.smartRefreshLayout"
+deps.realtimeblurview = "com.github.mmin18:realtimeblurview:$versions.realtimeblurview"
+deps.kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin_plugin"
+deps.kotlin_stdlib_jdk7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin_plugin"
+deps.autosize = "me.jessyan:autosize:$versions.autosize"
+deps.lottie = "com.airbnb.android:lottie:$versions.lottie_version"
+deps.support = support
+
+def anim = [:]
+anim.circular_animcom = "com.github.XunMengWinter:CircularAnim:$versions.circular_animcom"
+anim.xfrag = "com.github.zkbutt:XFrag:$versions.xfrag"
+deps.anims = anim
+
+def room = [:]
+room.runtime = "android.arch.persistence.room:runtime:$versions.room"
+room.compiler = "android.arch.persistence.room:compiler:$versions.room"
+room.rxjava2 = "android.arch.persistence.room:rxjava2:$versions.room"
+room.testing = "android.arch.persistence.room:testing:$versions.room"
+deps.room = room
+
+def lifecycle = [:]
+lifecycle.runtime = "android.arch.lifecycle:runtime:$versions.lifecycle"
+lifecycle.extensions = "android.arch.lifecycle:extensions:$versions.lifecycle"
+lifecycle.java8 = "android.arch.lifecycle:common-java8:$versions.lifecycle"
+lifecycle.compiler = "android.arch.lifecycle:compiler:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def arch_core = [:]
+arch_core.testing = "android.arch.core:core-testing:$versions.arch_core"
+deps.arch_core = arch_core
+
+def bugs = [:]
+bugs.findbugs = "com.google.code.findbugs:annotations:$versions.findbugs"
+deps.bugs = bugs
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+deps.retrofit = retrofit
+deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${versions.okhttp_logging_interceptor}"
+
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+deps.dagger = dagger
+
+def espresso = [:]
+espresso.core = "com.android.support.test.espresso:espresso-core:$versions.espresso"
+espresso.contrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+espresso.intents = "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+deps.espresso = espresso
+
+def atsl = [:]
+atsl.runner = "com.android.support.test:runner:$versions.atsl_runner"
+atsl.rules = "com.android.support.test:rules:$versions.atsl_runner"
+deps.atsl = atsl
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.all = "org.mockito:mockito-all:$versions.mockito_all"
+deps.mockito = mockito
+
+def per = [:]
+per.permissionsdispatcher = "com.github.hotchemi:permissionsdispatcher:$versions.permissionsdispatcher"
+per.permissionsdispatcher_processor = "com.github.hotchemi:permissionsdispatcher-processor:$versions.permissionsdispatcher"
+deps.per = per
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin"
+kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
+kotlin.coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
+kotlin.coroutines_code = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
+
+deps.paging = "android.arch.paging:runtime:$versions.paging"
+deps.kotlin = kotlin
+
+def glide = [:]
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+glide.transformations = "jp.wasabeef:glide-transformations:$versions.glide_transformations"
+deps.glide = glide
+deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
+deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+deps.timber = "com.jakewharton.timber:timber:$versions.timber"
+deps.junit = "junit:junit:$versions.junit"
+deps.mock_web_server = "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
+deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
+deps.rxpermissions = "com.tbruyelle.rxpermissions2:rxpermissions:$versions.rxpermissions"
+deps.easypermissions = "pub.devrel:easypermissions:$versions.easypermissions"
+deps.rx_android = "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
+deps.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.circularprogressbar = "com.mikhaellopez:circularprogressbar:$versions.circularprogressbar"
+deps.photo_view = "com.github.chrisbanes:PhotoView:$versions.photo_view"
+deps.multi_Image_Selector = "com.github.lovetuzitong:MultiImageSelector:$versions.multi_Image_Selector"
+deps.rwidget_helper = "com.ruffian.library:RWidgetHelper:$versions.rwidget_helper"
+ext.deps = deps
+
+def caches = [:]
+caches.disklrucache = "com.jakewharton:disklrucache:$versions.disklrucache"
+deps.caches = caches
+
+def build_versions = [:]
+build_versions.min_sdk = 16
+build_versions.target_sdk = 28
+build_versions.build_tools = "28.0.3"
+ext.build_versions = build_versions
+
+
+
+def work = [:]
+work.runtime = "android.arch.work:work-runtime:$versions.work"
+work.testing = "android.arch.work:work-testing:$versions.work"
+work.firebase = "android.arch.work:work-firebase:$versions.work"
+deps.work = work
+
+def logs = [:]
+logs.logger = "com.orhanobut:logger:$versions.logs"
+logs.logutils = "com.apkfuns.logutils:library:$versions.logutils"
+logs.log2file = "com.apkfuns.log2file:log2file:$versions.log2file"
+logs.bugly = "com.tencent.bugly:crashreport:$versions.bugly"
+deps.logs = logs
+
+def updates = [:]
+updates.up = "com.qianwen:update-app:$versions.up"
+updates.okgo = "com.lzy.net:okgo:$versions.okgo"
+updates.okhttp_utils = "com.qianwen:okhttp-utils:$versions.ok_utils"
+deps.updates = updates
+
+/* \u5bcc\u6587\u672c */
+def richtexts = [:]
+richtexts.richtext = "com.zzhoujay.richtext:richtext:$versions.richtext"
+deps.richtexts = richtexts
+
+def aop = [:]
+aop.aspectjtools = "org.aspectj:aspectjtools:$versions.aspectjx_plugin"
+aop.aspectjweaver = "aspectj:aspectjweaver:$versions.aspectjx_plugin"
+aop.aspectj = "org.aspectj:aspectjrt:$versions.aspectjrt"
+deps.magic_plugin = "cn.leo.plugin:magic-plugin:$versions.magic_plugin"
+deps.aop = aop
+
+def moduler = [:]
+moduler.wechat_sdk = "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:$versions.wechat_sdk"
+deps.moduler = moduler
+
+def navigation = [:]
+navigation.runtime = "android.arch.navigation:navigation-runtime:$versions.navigation"
+navigation.runtime_ktx = "android.arch.navigation:navigation-runtime-ktx:$versions.navigation"
+navigation.fragment = "android.arch.navigation:navigation-fragment:$versions.navigation"
+navigation.fragment_ui = "android.arch.navigation:navigation-ui:$versions.navigation"
+navigation.fragment_ktx = "android.arch.navigation:navigation-fragment-ktx:$versions.navigation"
+navigation.safe_args_plugin = "android.arch.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+navigation.testing_ktx = "android.arch.navigation:navigation-testing-ktx:$versions.navigation"
+deps.navigation = navigation
+
+ext.deps = deps
+
+def static addRepos(RepositoryHandler handler) {
+    handler.maven {
+        name "aliyun-Repo"
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    handler.google()
+    handler.jcenter()
+    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    handler.maven { url "https://jitpack.io" }
+    handler.maven { url 'https://github.com/500px/500px-android-blur/raw/master/releases/' }
+}
+
+ext.addRepos = this.&addRepos
+
