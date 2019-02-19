@@ -22,9 +22,8 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public abstract class BaseActivity extends AppCompatActivity implements HasSupportFragmentInjector {
-    @Inject
-    public DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
+public abstract class BaseActivity extends AppCompatActivity   {
+
     private Activity activity;
     private WaterRippleView waterRippleView;
 
@@ -80,8 +79,5 @@ public abstract class BaseActivity extends AppCompatActivity implements HasSuppo
         super.onDestroy();
         SlideBack.unregister(this);
     }
-    @Override
-    public AndroidInjector<Fragment> supportFragmentInjector() {
-        return dispatchingAndroidInjector;
-    }
+
 }

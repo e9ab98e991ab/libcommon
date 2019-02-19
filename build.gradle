@@ -81,6 +81,3 @@ kotlin {
         coroutines "enable"
     }
 }
-kapt {
-    generateStubs = true
-}
