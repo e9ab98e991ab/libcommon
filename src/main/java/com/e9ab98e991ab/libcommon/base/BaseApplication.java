@@ -1,5 +1,6 @@
 package com.e9ab98e991ab.libcommon.base;
 
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;

@@ -1,12 +1,6 @@
 
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
 dependencies {
-    api fileTree(include: ['*.jar','*.aar'], exclude: ['android-support*.jar'], dir: 'libs')
-
+    //implementation fileTree(include: ['*.jar','*.aar'], exclude: ['android-support*.jar'], dir: 'libs')
     api deps.androidx.appcompat
     api deps.androidx.core
     api deps.androidx.percentlayout
@@ -17,13 +11,13 @@ dependencies {
     api deps.androidx.cardview
 
     api deps.androidx.annotation
+    api deps.androidx.constraintlayout
     api deps.androidx.percentlayout
 
-    api deps.androidx.constraintlayout
 
-    api deps.androidx.lifecycle_runtime
-    api deps.androidx.lifecycle_extensions
-    api deps.androidx.lifecycle_common_java8
+//    api deps.androidx.lifecycle_runtime
+//    api deps.androidx.lifecycle_extensions
+//    api deps.androidx.lifecycle_common_java8
 
     api deps.androidx.room_runtime
 
@@ -38,14 +32,12 @@ dependencies {
     api deps.kotlin.coroutines_android
     api deps.kotlin.coroutines_code
     // anko
-    api "org.jetbrains.anko:anko-commons:0.10.5"
-    // Appcompat-v7 (only Anko Commons)
-    api "org.jetbrains.anko:anko-appcompat-v7-commons:0.10.5"
-    // Support-v4 (only Anko Commons)
-    api "org.jetbrains.anko:anko-support-v4-commons:0.10.5"
+//    api "org.jetbrains.anko:anko-commons:0.10.5"
+//    // Appcompat-v7 (only Anko Commons)
+//    api "org.jetbrains.anko:anko-appcompat-v7-commons:0.10.5"
+//    // Support-v4 (only Anko Commons)
+//    api "org.jetbrains.anko:anko-support-v4-commons:0.10.5"
 
-    debugApi "com.squareup.leakcanary:leakcanary-android:1.6.2"
-    releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:1.6.2"
 
     api deps.retrofit.gson
     //今日头条适配方案
@@ -75,6 +67,9 @@ dependencies {
 
     api deps.zxing
     api deps.easypermissions
+
+    debugApi "com.squareup.leakcanary:leakcanary-android:1.6.2"
+    releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:1.6.2"
 }
 kotlin {
     experimental {

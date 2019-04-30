@@ -69,7 +69,21 @@ task clean(type: Delete) {
 }
 ```
 
+ 
+
 第三步
+
+在app下的settings.gradle中引用
+
+```gradle
+include 'libcommon'
+```
+
+第四步
+
+在app下的gradle.properties中添加`isPlugin=false`是否开启插件选项
+
+第五步
 
 在app下的build.gradle中引用
 
@@ -77,7 +91,7 @@ task clean(type: Delete) {
 implementation project(':libcommon')
 ```
 
-第四步
+第六步
 
 在APP的AndroidManifest.xml中添加适配方案的UI图大小
 

@@ -2,8 +2,6 @@ package com.e9ab98e991ab.libcommon.utils.toast;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.widget.Toast;
 
 import com.e9ab98e991ab.libcommon.R;
