@@ -91,6 +91,7 @@ versions.constraintlayout = "1.1.3"
 versions.lottie_version = "2.8.0"
 versions.zxing = "3.3.3"
 versions.permissionsdispatcher = "3.1.0"
+versions.eventbus="3.1.1"
 def deps = [:]
 
 
@@ -168,6 +169,7 @@ deps.arch_core = arch_core
 
 def bugs = [:]
 bugs.findbugs = "com.google.code.findbugs:annotations:$versions.findbugs"
+bugs.eventbus = "org.greenrobot:eventbus:$versions.eventbus"
 deps.bugs = bugs
 
 def retrofit = [:]

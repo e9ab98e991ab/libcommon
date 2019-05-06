@@ -18,6 +18,8 @@ import javax.inject.Inject;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.greenrobot.eventbus.EventBus;
+
 public abstract class BaseActivity extends AppCompatActivity   {
 
     private Activity activity;
@@ -48,6 +50,7 @@ public abstract class BaseActivity extends AppCompatActivity   {
 
 
     }
+
 
 
     /***

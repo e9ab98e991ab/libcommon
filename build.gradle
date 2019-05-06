@@ -40,6 +40,8 @@ dependencies {
 
 
     api deps.retrofit.gson
+
+    api deps.bugs.eventbus
     //今日头条适配方案
     api deps.autosize
 
