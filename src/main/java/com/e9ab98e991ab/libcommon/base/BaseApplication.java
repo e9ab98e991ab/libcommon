@@ -11,13 +11,6 @@ import com.apkfuns.logutils.LogUtils;
 import com.e9ab98e991ab.libcommon.utils.toast.ToastyUtils;
 import com.squareup.leakcanary.LeakCanary;
 
-import java.util.Locale;
-
-import javax.inject.Inject;
-
-import dagger.android.AndroidInjector;
-import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasActivityInjector;
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.onAdaptListener;
