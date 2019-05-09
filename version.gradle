@@ -116,9 +116,26 @@ androidx.multidex = "androidx.multidex:multidex:$versions.multidex"
 androidx.cardview = "androidx.cardview:cardview:$versions.androidx"
 androidx.annotation = "androidx.annotation:annotation:$versions.androidx"
 androidx.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+
+// 或者 - 仅限生命周期（无ViewModel或LiveData）。一些UI
+// AndroidX库使用这个轻量级导入生命周期
 androidx.lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime:$versions.androidx_lifecycle"
+// ViewModel and LiveData
 androidx.lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:$versions.androidx_lifecycle"
+// 或者 - 只是 LiveData
+androidx.lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata:$versions.androidx_lifecycle"
+// 或者 - 只是 ViewModel
+androidx.lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel:$versions.androidx_lifecycle"
+//生命周期编译器
+androidx.lifecycle_compiler_ap = "androidx.lifecycle:lifecycle-compiler:$versions.androidx_lifecycle"
+//或者 - 如果使用Java8，请使用以下代替生命周期编译器
 androidx.lifecycle_common_java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.androidx_lifecycle"
+androidx.lifecycle_livedata_core = "androidx.lifecycle:lifecycle-livedata-core:$versions.androidx_lifecycle"
+// 可选 -  ReactiveStreams支持LiveData
+androidx.lifecycle_reactivestreams = "androidx.lifecycle:lifecycle-reactivestreams:$versions.androidx_lifecycle"
+//可选 - LiveData的测试助手
+androidx.lifecycle_core_testing = "androidx.arch.core:core-testing:$versions.androidx_lifecycle"
+
 androidx.room_runtime = "androidx.room:room-runtime:$versions.androidx_room"
 deps.androidx = androidx
 
@@ -175,6 +192,8 @@ deps.bugs = bugs
 def retrofit = [:]
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.simplexml = "com.squareup.retrofit2:converter-simplexml:$versions.retrofit"
+retrofit.jackson = "com.squareup.retrofit2:converter-jackson:$versions.retrofit"
 retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
 deps.retrofit = retrofit
 deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${versions.okhttp_logging_interceptor}"
