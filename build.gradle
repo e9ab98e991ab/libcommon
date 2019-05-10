@@ -73,6 +73,8 @@ dependencies {
     api deps.zxing
     api deps.easypermissions
 
+   // api 'org.projectlombok:lombok:1.16.8'
+
     annotationProcessor deps.dagger.compiler
     annotationProcessor deps.dagger.android_support_compiler
     annotationProcessor deps.glide.compiler

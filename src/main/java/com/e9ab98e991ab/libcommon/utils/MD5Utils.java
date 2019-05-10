@@ -6,9 +6,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * MD5相关
+ * @author gaoxin 2019-05-10 17:54
+ * @version V1.0.0
+ * @name MD5Utils
+ * @mail godfeer@aliyun.com
+ * @description  MD5相关
  */
-
 public class MD5Utils {
 
     public static final String TAG = MD5Utils.class.getSimpleName();
