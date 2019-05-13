@@ -42,6 +42,8 @@ public class BaseApplication extends Application  {
         initAutoSize();
         initToastyUtils();
         initLogUtils();
+
+
     }
 
     /***
