@@ -33,11 +33,11 @@ dependencies {
     api deps.kotlin.coroutines_android
     api deps.kotlin.coroutines_code
     // anko
-//    api "org.jetbrains.anko:anko-commons:0.10.5"
-//    // Appcompat-v7 (only Anko Commons)
-//    api "org.jetbrains.anko:anko-appcompat-v7-commons:0.10.5"
-//    // Support-v4 (only Anko Commons)
-//    api "org.jetbrains.anko:anko-support-v4-commons:0.10.5"
+    api "org.jetbrains.anko:anko-commons:0.10.5"
+    // Appcompat-v7 (only Anko Commons)
+    api "org.jetbrains.anko:anko-appcompat-v7-commons:0.10.5"
+    // Support-v4 (only Anko Commons)
+    api "org.jetbrains.anko:anko-support-v4-commons:0.10.5"
 
 
     api deps.retrofit.gson
