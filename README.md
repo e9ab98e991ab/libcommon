@@ -110,7 +110,7 @@ android:value="640"/>
 更新libcommon
 
 ```
- git submodel update
+ git submodule update
 ```
 
 提交libcommon
