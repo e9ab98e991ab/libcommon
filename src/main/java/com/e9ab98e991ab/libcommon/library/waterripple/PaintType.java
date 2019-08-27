@@ -7,7 +7,13 @@ import java.lang.annotation.RetentionPolicy;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.StringDef;
-
+/** 
+ * @author gaoxin 2019-08-27 15:39
+ * @version V1.0.0
+ * @name PaintType
+ * @mail godfeer@aliyun.com
+ * @description  TODO
+ */
 public class PaintType {
 
     /**
