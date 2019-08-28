@@ -18,7 +18,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 自定义声音振动曲线view
+ * @author gaoxin 2019-08-28 10:28
+ * @version V1.0.0
+ * @name VoiceLineView
+ * @mail godfeer@aliyun.com
+ * @description  自定义声音振动曲线view
  */
 public class VoiceLineView extends View {
     private final int LINE = 0;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:voiceView="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
@@ -17,16 +17,16 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:background="@android:color/transparent"
-            voiceView:fineness="three"
-            voiceView:lineSpeed="90"
-            voiceView:maxVolume="200"
-            voiceView:middleLine="@android:color/transparent"
-            voiceView:middleLineHeight="1dp"
-            voiceView:rectSpace="2dp"
-            voiceView:rectWidth="5dp"
-            voiceView:sensibility="four"
-            voiceView:viewMode="line"
-            voiceView:voiceLine="@color/colorPrimary" />
+            app:fineness="three"
+            app:lineSpeed="90"
+            app:maxVolume="200"
+            app:middleLine="@android:color/transparent"
+            app:middleLineHeight="1dp"
+            app:rectSpace="2dp"
+            app:rectWidth="5dp"
+            app:sensibility="four"
+            app:viewMode="line"
+            app:voiceLine="@color/colorPrimary" />
 
 
         <ImageView

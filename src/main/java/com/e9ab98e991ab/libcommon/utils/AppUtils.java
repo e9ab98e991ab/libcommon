@@ -581,4 +581,8 @@ public class AppUtils {
         return result;
     }
 
+    public static int getGridItemSize(Context context,int itemWhite){
+        int itemSize = Utils.getScreenWidth(context)/itemWhite;
+        return itemSize;
+    }
 }

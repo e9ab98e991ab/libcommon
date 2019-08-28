@@ -1,6 +1,6 @@
 
 dependencies {
-    //implementation fileTree(include: ['*.jar','*.aar'], exclude: ['android-support*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar','*.aar'], exclude: ['android-support*.jar'], dir: 'libs')
     api deps.androidx.appcompat
     api deps.androidx.core
     api deps.androidx.percentlayout
