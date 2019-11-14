@@ -9,12 +9,14 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
+import com.e9ab98e991ab.libcommon.library.focus.FocusLayout;
 import com.e9ab98e991ab.libcommon.library.waterripple.WaterRippleView;
 import com.e9ab98e991ab.libcommon.utils.Utils;
 import com.parfoismeng.slidebacklib.SlideBack;
@@ -35,6 +37,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private Activity activity;
     private WaterRippleView waterRippleView;
+
+    private boolean isFocus;
 
 
     @Override
@@ -58,11 +62,37 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         initSet();
         initDate();
-
+    }
+    //焦点层 实现OnGlobalFocusChangeListener接口
+    private FocusLayout mFocusLayout;
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        if (isFocus()){
+            mFocusLayout = new FocusLayout(this);
+            bindListener();//绑定焦点变化事件
+            addContentView(mFocusLayout,
+                    new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                            ViewGroup.LayoutParams.MATCH_PARENT));//添加焦点层
+        }
 
     }
+    private void bindListener() {
+        //获取根元素
+        View mContainerView = this.getWindow().getDecorView();//.findViewById(android.R.id.content);
+        //得到整个view树的viewTreeObserver
+        ViewTreeObserver viewTreeObserver = mContainerView.getViewTreeObserver();
+        //给观察者设置焦点变化监听
+        viewTreeObserver.addOnGlobalFocusChangeListener(mFocusLayout);
+    }
 
+    public boolean isFocus() {
+        return isFocus;
+    }
 
+    public void setFocus(boolean focus) {
+        isFocus = focus;
+    }
 
     /***
      * 绑定layout
