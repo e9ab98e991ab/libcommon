@@ -53,7 +53,9 @@ public abstract class BaseActivity extends AppCompatActivity {
          */
         SlideBack.register(this, true, this::finish);
 
-        setContentView(getLayoutId());
+        if (getLayoutId() != 0){
+            setContentView(getLayoutId());
+        }
 
         if (waterRippleView == null) {
             waterRippleView = new WaterRippleView(this);
