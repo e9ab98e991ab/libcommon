@@ -6,10 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-import com.e9ab98e991ab.libcommon.base.glide.GlideUtlis;
-
 import java.util.List;
 
 import androidx.annotation.StringRes;
@@ -105,13 +101,5 @@ public class SmartViewHolder extends RecyclerView.ViewHolder implements View.OnC
         }
         return this;
     }
-    public SmartViewHolder imageGild(int id,String imageId) {
-        View view = findViewById(id);
-        if (view instanceof ImageView) {
-            Glide.with(view.getContext()).load(imageId).apply(new GlideUtlis().glideRO()).into(((ImageView)view));
-        }
-        return this;
-    }
-
 
 }

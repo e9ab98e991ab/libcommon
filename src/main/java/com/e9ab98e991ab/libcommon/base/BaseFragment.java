@@ -70,59 +70,13 @@ public abstract class BaseFragment extends Fragment implements View.OnTouchListe
     }
 
 
-    /**
-     * 替换fragment
-     *
-     * @param fragment
-     * @param frameId
-     */
-    protected void replaceFragment(BaseFragment fragment, @IdRes int frameId) {
-        Utils.checkNotNull(fragment);
-        getHoldingActivity().replaceFragment(fragment, frameId);
-    }
 
 
 
-    /**
-     * 隐藏fragment
-     *
-     * @param fragment
-     */
-    protected void hideFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
-        getHoldingActivity().hideFragment(fragment);
-    }
 
 
-    /**
-     * 显示fragment
-     *
-     * @param fragment
-     */
-    protected void showFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
-        getHoldingActivity().showFragment(fragment);
-    }
 
 
-    /**
-     * 移除Fragment
-     *
-     * @param fragment
-     */
-    protected void removeFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
-        getHoldingActivity().removeFragment(fragment);
-
-    }
-
-
-    /**
-     * 弹出栈顶部的Fragment
-     */
-    protected void popFragment() {
-        getHoldingActivity().popFragment();
-    }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {

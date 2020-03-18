@@ -5,11 +5,9 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
-import com.airbnb.lottie.animation.content.Content;
 import com.apkfuns.logutils.LogLevel;
 import com.apkfuns.logutils.LogUtils;
 import com.e9ab98e991ab.libcommon.utils.toast.ToastyUtils;
-import com.squareup.leakcanary.LeakCanary;
 
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
@@ -97,7 +95,7 @@ public class BaseApplication extends Application  {
 //            // You should not init your app in this process.
 //            return;
 //        }
-        LeakCanary.install(this);
+//        LeakCanary.install(this);
     }
 
     @Override

@@ -13,28 +13,15 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
-
-import com.apkfuns.logutils.LogUtils;
 import com.e9ab98e991ab.libcommon.library.focus.FocusLayout;
 import com.e9ab98e991ab.libcommon.library.waterripple.WaterRippleView;
 import com.e9ab98e991ab.libcommon.utils.Utils;
-import com.parfoismeng.slidebacklib.SlideBack;
-import com.parfoismeng.slidebacklib.callback.SlideBackCallBack;
-
-import javax.inject.Inject;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import dagger.android.support.HasSupportFragmentInjector;
 
 public abstract class BaseActivity extends AppCompatActivity {
-//    @Inject
-//    public DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
-
     private Activity activity;
     private WaterRippleView waterRippleView;
 
@@ -44,14 +31,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*
-         * 侧滑返回
-         */
-        //Slidr.attach(this);
-        /***
-         * DataBing
-         */
-        SlideBack.register(this, true, this::finish);
 
         if (getLayoutId() != 0){
             setContentView(getLayoutId());
@@ -102,8 +81,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public abstract int getLayoutId();
 
-
-
     /***
      * 初始执行方法
      */
@@ -113,22 +90,10 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 初始数据执行方法
      */
     public abstract void initDate();
-
-
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        SlideBack.unregister(this);
     }
-
-//    @Override
-//    public AndroidInjector<Fragment> supportFragmentInjector() {
-//        return dispatchingAndroidInjector;
-//
-//    }
-
-
     /**
      * 添加fragment
      *
@@ -142,50 +107,6 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .add(frameId, fragment, fragment.getClass().getSimpleName())
                 .addToBackStack(fragment.getClass().getSimpleName())
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .commitAllowingStateLoss();
-
-    }
-
-
-    /**
-     * 替换fragment
-     * @param fragment
-     * @param frameId
-     */
-    public void replaceFragment(BaseFragment fragment, @IdRes int frameId) {
-        Utils.checkNotNull(fragment);
-        getSupportFragmentManager().beginTransaction()
-                .replace(frameId, fragment, fragment.getClass().getSimpleName())
-                .addToBackStack(fragment.getClass().getSimpleName())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .commitAllowingStateLoss();
-
-    }
-
-
-
-
-    /**
-     * 隐藏fragment
-     * @param fragment
-     */
-    public void hideFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
-        getSupportFragmentManager().beginTransaction()
-                .hide(fragment)
-                .commitAllowingStateLoss();
-
-    }
-
-
-    /**
-     * 显示fragment
-     * @param fragment
-     */
-    public void showFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
-        getSupportFragmentManager().beginTransaction()
-                .show(fragment)
                 .commitAllowingStateLoss();
 
     }
@@ -204,27 +125,4 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * 移除fragment
-     * @param fragment
-     */
-    public void removeFragment(BaseFragment fragment) {
-        Utils.checkNotNull(fragment);
-        getSupportFragmentManager().beginTransaction()
-                .remove(fragment)
-                .commitAllowingStateLoss();
-
-    }
-
-
-    /**
-     * 弹出栈顶部的Fragment
-     */
-    public void popFragment() {
-        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
-            getSupportFragmentManager().popBackStack();
-        } else {
-            finish();
-        }
-    }
 }

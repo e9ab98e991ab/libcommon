@@ -4,10 +4,8 @@ dependencies {
     /*标准库 & Standard library*/
     api deps.androidx.appcompat
     api deps.androidx.core
-    api deps.androidx.percentlayout
     api deps.androidx.legacy_support_v4
     api deps.androidx.recyclerview
-    api deps.androidx.gridlayout
     api deps.androidx.multidex
     api deps.androidx.cardview
 
@@ -20,11 +18,17 @@ dependencies {
     api deps.androidx.lifecycle_runtime
     api deps.androidx.lifecycle_extensions
 
+    api deps.glide.transformations
+
     api deps.retrofit.gson
     api deps.retrofit.simplexml
     api deps.retrofit.jackson
 
-    /*三方库 & Sanfang Library*/
+    api deps.paging
+    api deps.logs.logutils
+
+
+    /* 三方库 & Sanfang Library*/
     api deps.bugs.eventbus
     //今日头条适配方案
     api deps.autosize
