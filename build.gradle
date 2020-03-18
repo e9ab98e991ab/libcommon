@@ -1,6 +1,7 @@
 
 dependencies {
     implementation fileTree(include: ['*.jar','*.aar'], exclude: ['android-support*.jar'], dir: 'libs')
+    /*标准库 & Standard library*/
     api deps.androidx.appcompat
     api deps.androidx.core
     api deps.androidx.percentlayout
@@ -14,73 +15,21 @@ dependencies {
     api deps.androidx.constraintlayout
     api deps.androidx.percentlayout
 
+    api deps.androidx.room_runtime
 
     api deps.androidx.lifecycle_runtime
     api deps.androidx.lifecycle_extensions
-    annotationProcessor deps.androidx.lifecycle_compiler_ap
-
-
-    api deps.androidx.room_runtime
-
-    api deps.dagger.runtime
-    api deps.dagger.android
-    api deps.dagger.android_support
-    annotationProcessor deps.dagger.compiler
-    annotationProcessor deps.dagger.android_support_compiler
-
-    api deps.kotlin_stdlib_jdk7
-
-    api deps.kotlin.coroutines_android
-    api deps.kotlin.coroutines_code
-    // anko
-    api "org.jetbrains.anko:anko-commons:0.10.5"
-    // Appcompat-v7 (only Anko Commons)
-    api "org.jetbrains.anko:anko-appcompat-v7-commons:0.10.5"
-    // Support-v4 (only Anko Commons)
-    api "org.jetbrains.anko:anko-support-v4-commons:0.10.5"
-
 
     api deps.retrofit.gson
     api deps.retrofit.simplexml
     api deps.retrofit.jackson
 
+    /*三方库 & Sanfang Library*/
     api deps.bugs.eventbus
     //今日头条适配方案
     api deps.autosize
-
     api deps.lottie
-
     api deps.smartRefreshLayout
-
-    api deps.glide.runtime
-
-    api deps.glide.transformations
-
-    api 'jp.wasabeef:recyclerview-animators:2.2.7'
-
-    api deps.logs.logutils
-
-    api 'com.github.ctiao:ndkbitmap-x86:0.9.21'
-    //dialog
-    api "com.kongzue.dialog:dialog:2.3.9.1"
-
-    api 'com.r0adkll:slidableactivity:2.0.5'
-
-    api 'com.google.guava:guava:24.0-android'
-
-    api 'com.github.parfoismeng:slideback:1.0.3'
-
-    api deps.zxing
-    api deps.easypermissions
-
-   // api 'org.projectlombok:lombok:1.16.8'
-
-    annotationProcessor deps.dagger.compiler
-    annotationProcessor deps.dagger.android_support_compiler
-    annotationProcessor deps.glide.compiler
-    debugApi "com.squareup.leakcanary:leakcanary-android:1.6.2"
-    releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:1.6.2"
-
 }
 kotlin {
     experimental {
