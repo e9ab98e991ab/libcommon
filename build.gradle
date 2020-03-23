@@ -1,6 +1,5 @@
-
 dependencies {
-    implementation fileTree(include: ['*.jar','*.aar'], exclude: ['android-support*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar', '*.aar'], exclude: ['android-support*.jar'], dir: 'libs')
     /*标准库 & Standard library*/
     api deps.androidx.appcompat
     api deps.androidx.core
@@ -25,15 +24,31 @@ dependencies {
     api deps.retrofit.jackson
 
     api deps.paging
+
+
+    /* 三方库 &已下 Sanfang Library */
     api deps.logs.logutils
-
-
-    /* 三方库 & Sanfang Library*/
-    api deps.bugs.eventbus
     //今日头条适配方案
     api deps.autosize
     api deps.lottie
     api deps.smartRefreshLayout
+
+    /*换肤 / Skin resurfacing*/
+    api deps.shin.support
+    api deps.shin.appcompat
+    api deps.shin.design
+    api deps.shin.cardview
+    api deps.shin.constraint_layout
+
+    /*4.4以上沉浸式实现 刘海屏*/
+    api deps.moduler.immersionbar
+    api deps.moduler.immersionbar_components
+    api deps.moduler.immersionbar_ktx
+    /* fragment管理框架 & fragment management framework*/
+    api deps.moduler.fragmentationx
+    api deps.moduler.fragmentationx_swipeback
+    api deps.moduler.fragmentationx_eventbus
+
 }
 kotlin {
     experimental {

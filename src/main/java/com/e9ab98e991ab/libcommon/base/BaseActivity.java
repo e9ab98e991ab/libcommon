@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +19,18 @@ import com.e9ab98e991ab.libcommon.library.waterripple.WaterRippleView;
 import com.e9ab98e991ab.libcommon.utils.Utils;
 
 import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity extends AppCompatActivity {
+import me.yokeyword.fragmentation.SupportActivity;
+import me.yokeyword.fragmentation.SupportFragment;
+
+public abstract class BaseActivity extends SupportActivity {
     private Activity activity;
     private WaterRippleView waterRippleView;
 
     private boolean isFocus;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,22 +97,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }
-    /**
-     * 添加fragment
-     *
-     * @param fragment
-     * @param frameId
-     */
-    @SuppressLint("WrongConstant")
-    public void addFragment(BaseFragment fragment, @IdRes int frameId) {
-        Utils.checkNotNull(fragment);
-        getSupportFragmentManager().beginTransaction()
-                .add(frameId, fragment, fragment.getClass().getSimpleName())
-                .addToBackStack(fragment.getClass().getSimpleName())
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .commitAllowingStateLoss();
-
     }
 
     /***

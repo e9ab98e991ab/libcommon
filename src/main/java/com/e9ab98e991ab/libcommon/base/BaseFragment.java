@@ -46,38 +46,6 @@ public abstract class BaseFragment extends Fragment implements View.OnTouchListe
         }
     }
 
-
-    /**
-     * 获取宿主Activity
-     *
-     * @return BaseActivity
-     */
-    protected BaseActivity getHoldingActivity() {
-        return mActivity;
-    }
-
-
-    /**
-     * 添加fragment
-     *
-     * @param fragment
-     * @param frameId
-     */
-    protected void addFragment(BaseFragment fragment, @IdRes int frameId) {
-        Utils.checkNotNull(fragment);
-        getHoldingActivity().addFragment(fragment, frameId);
-
-    }
-
-
-
-
-
-
-
-
-
-
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         return true;//消费掉点击事件,防止跑到下一层去

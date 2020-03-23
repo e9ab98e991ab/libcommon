@@ -7,11 +7,18 @@ import android.content.Context;
 
 import com.apkfuns.logutils.LogLevel;
 import com.apkfuns.logutils.LogUtils;
+import com.e9ab98e991ab.libcommon.BuildConfig;
 import com.e9ab98e991ab.libcommon.utils.toast.ToastyUtils;
 
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.onAdaptListener;
+import me.yokeyword.fragmentation.Fragmentation;
+import skin.support.SkinCompatManager;
+import skin.support.app.SkinAppCompatViewInflater;
+import skin.support.app.SkinCardViewInflater;
+import skin.support.constraint.app.SkinConstraintViewInflater;
+import skin.support.design.app.SkinMaterialViewInflater;
 
 
 /**
@@ -38,17 +45,44 @@ public class BaseApplication extends Application  {
         sInstance = this;
 
         initAutoSize();
+        initFragmentation();
         initToastyUtils();
         initLogUtils();
 
-
     }
-
     /***
      * Toast自定义布局框
      */
     private void initToastyUtils(){
         ToastyUtils.getConfig().setShouldTint(false).init(getApplicationContext());
+    }
+    private void initSkin(){
+        SkinCompatManager.withoutActivity(this)
+                // 基础控件换肤初始化
+                .addInflater(new SkinAppCompatViewInflater())
+                // material design 控件换肤初始化[可选]
+                .addInflater(new SkinMaterialViewInflater())
+                // ConstraintLayout 控件换肤初始化[可选]
+                .addInflater(new SkinConstraintViewInflater())
+                // CardView v7 控件换肤初始化[可选]
+                .addInflater(new SkinCardViewInflater())
+                // 关闭状态栏换肤，默认打开[可选]
+                .setSkinStatusBarColorEnable(false)
+                // 关闭windowBackground换肤，默认打开[可选]
+                .setSkinWindowBackgroundEnable(false)
+                .loadSkin();
+    }
+
+    /***
+     * Fragment管理库
+     */
+    private void initFragmentation() {
+        // Fragmentation is recommended to initialize in the Application
+        Fragmentation.builder()
+                // show stack view. Mode: BUBBLE, SHAKE, NONE
+                .stackViewMode(Fragmentation.BUBBLE)
+                .debug(BuildConfig.DEBUG)
+                .install();
     }
 
     /***

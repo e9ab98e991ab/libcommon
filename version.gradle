@@ -92,6 +92,9 @@ versions.lottie_version = "2.8.0"
 versions.zxing = "3.3.3"
 versions.permissionsdispatcher = "3.1.0"
 versions.eventbus="3.1.1"
+
+versions.shin='4.0.4'
+
 def deps = [:]
 
 
@@ -302,9 +305,28 @@ aop.aspectj = "org.aspectj:aspectjrt:$versions.aspectjrt"
 deps.magic_plugin = "cn.leo.plugin:magic-plugin:$versions.magic_plugin"
 deps.aop = aop
 
+def shin = [:]
+shin.support = "skin.support:skin-support:$versions.shin"
+shin.appcompat = "skin.support:skin-support-appcompat:$versions.shin"
+shin.design = "skin.support:skin-support-design:$versions.shin"
+shin.cardview = "skin.support:skin-support-cardview:$versions.shin"
+shin.constraint_layout = "skin.support:skin-support-constraint-layout:$versions.shin"
+deps.shin = shin
+
 def moduler = [:]
 moduler.wechat_sdk = "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:$versions.wechat_sdk"
 moduler.upload_apk_plugin = "com.github.chenyy0708:UploadApkPlugin:3.0.0"
+
+moduler.immersionbar = "com.gyf.immersionbar:immersionbar:3.0.0"
+moduler.immersionbar_components = "com.gyf.immersionbar:immersionbar-components:3.0.0"
+moduler.immersionbar_ktx = "com.gyf.immersionbar:immersionbar-ktx:3.0.0"
+
+moduler.fragmentationx = "me.yokeyword:fragmentationx:1.0.2"
+moduler.fragmentationx_swipeback = "me.yokeyword:fragmentationx-swipeback:1.0.2"
+moduler.fragmentationx_eventbus = "me.yokeyword:eventbus-activity-scope:1.1.0"
+//如果需要自定义 导入此库
+moduler.fragmentationx_core = "me.yokeyword:fragmentationx-core:1.0.2"
+
 deps.moduler = moduler
 ext.deps = deps
 
@@ -318,6 +340,7 @@ def static addRepos(RepositoryHandler handler) {
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     handler.maven { url "https://jitpack.io" }
     handler.maven { url 'https://github.com/500px/500px-android-blur/raw/master/releases/' }
+    handler.maven { url 'https://dl.bintray.com/umsdk/release' }
 }
 
 ext.addRepos = this.&addRepos
